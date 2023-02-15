@@ -8,6 +8,7 @@ import { HttpClient,HttpHeaders,HttpErrorResponse} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CrudServiceService {
+  //add the api link here
   REST_API:string='https://fakestoreapi.com/products';
   httpheaders = new HttpHeaders().set('Content-Type','application/json');
   constructor(private httpclient:HttpClient) { }
