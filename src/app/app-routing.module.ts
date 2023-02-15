@@ -4,13 +4,18 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { UsersComponent } from './pages/users/users.component';
+import { AddproductComponent } from './pages/products/addproduct/addproduct.component';
+import { EditproductComponent } from './pages/products/editproduct/editproduct.component';
+
 
 const routes: Routes = [
   {path:'',component:DashboardComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'products',component:ProductsComponent},
   {path:'reports',component:ReportsComponent},
-  {path:'users',component:UsersComponent}
+  {path:'users',component:UsersComponent},
+  {path:'addproduct',component:AddproductComponent},
+  {path:'editproduct/:id',component:EditproductComponent}
 ];
 
 
@@ -19,3 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 
