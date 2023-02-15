@@ -1,6 +1,7 @@
 <!--topnavbar-->
-<div class="topnav shadow p-1">
-  <a [routerLink]="">Admin Dashboard</a>
+<div class="topnav shadow ">
+  <a [routerLink]="" class="title">Admin Dashboard</a>
+  <img src="..\assets\LOGO-Vintage-05.png" class="logo" >
   <span class="menu"(click)="openNav(true)"><i class="bi bi-list"></i></span>
 </div>
 <!--End of topnav-->
@@ -16,8 +17,9 @@
           <li><a routerLink="/addproduct">add product</a></li>
         </ul>
     </li>
-    <li><a routerLink="/users"><i class="bi bi-person-gear"></i> Users</a></li>
     <li><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+    <li><a routerLink="/login"><i class="bi bi-box-arrow-left"></i> Login</a></li>
+
 
   </ul>
 
