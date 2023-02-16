@@ -8,32 +8,43 @@ import { HttpClient,HttpHeaders,HttpErrorResponse} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CrudServiceService {
-  //add the api link here
+  // Souhail's API links :
+  // REST_API:string='http://localhost:8000/api/Products';
+  // REST_API2:string='http://localhost:8000/api/Product';
+
   REST_API:string='https://fakestoreapi.com/products';
   httpheaders = new HttpHeaders().set('Content-Type','application/json');
   constructor(private httpclient:HttpClient) { }
+    
     AddProduct(data:product):Observable<any>{
       let API_URL=this.REST_API;
       return this.httpclient.post(API_URL,data).pipe(catchError(this.handleError))
     }
+  
     GetProducts(){
       return this.httpclient.get(this.REST_API);
     }
+  
     getProduct(id:any):Observable<any>{
+      // let API_URL=`${this.REST_API2}/${id}`;
       let API_URL=`${this.REST_API}/${id}`;
       return this.httpclient.get(API_URL,{headers:this.httpheaders}).pipe(
         map((res:any)=>{
           return res || {}
         }),catchError(this.handleError))
     }
+  
     updateProduct(id:any,data:product):Observable<any>{
+      // let API_URL=`${this.REST_API2}/${id}`;
       let API_URL=`${this.REST_API}/${id}`;
       return this.httpclient.put(API_URL,data,{headers:this.httpheaders}).pipe(
         map((res:any)=>{
           return res || {}
         }),catchError(this.handleError))
     }
+  
     deleteProduct(id:any):Observable<any>{
+      // let API_URL=`${this.REST_API2}/${id}`;
       let API_URL=`${this.REST_API}/${id}`;
       return this.httpclient.delete(API_URL,{headers:this.httpheaders}).pipe(
         map((res:any)=>{
@@ -52,5 +63,6 @@ export class CrudServiceService {
 
       return  throwError(errorMessage);
     }
+ 
   }
 
